@@ -6,8 +6,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import React, { FunctionComponent } from 'react';
 import { IJobStat } from 'woolf';
-import { JobFuncStat } from 'woolf/src/job';
+// import { JobFuncStat } from '../woolf/src/job';
 import ReactJson from 'react-json-view';
+import { JobFuncStat } from 'woolf/src/job';
 
 interface IWoolfStatProps {
   jobStat: IJobStat;

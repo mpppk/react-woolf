@@ -1,12 +1,12 @@
 import { IJobStat } from 'woolf';
 import { JobFuncStat, JobFuncState } from 'woolf/src/job';
 import { JobState } from 'woolf/src/scheduler/scheduler';
-import { ICluster, INode } from '../components/Dagre';
+import { ICluster, INode } from '../src/components/Dagre';
 import {
   findJobStatByCluster,
   findJobStatByNode,
   statsToClustersAndNodesAndEdges
-} from '../services/WoolfView';
+} from '../src/services/WoolfView';
 
 describe('findJobStatByNode', () => {
   it('can find job by node', async () => {

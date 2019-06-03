@@ -4,8 +4,8 @@
   baseUrl: '/static'
 };
 import { editor } from 'monaco-editor';
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
-import { Component } from 'react';
+import * as monaco from 'monaco-editor';
+import React, { Component } from 'react';
 
 interface MonacoProps {
   value: string;
@@ -14,9 +14,9 @@ interface MonacoProps {
   width: number;
   height: number;
   options: editor.IEditorOptions;
-  onChange: (...args: any) => void; // FIXME
-  editorWillMount: (...args: any) => any; // FIXME
-  editorDidMount: (...args: any) => any; // FIXME
+  onChange: (...args: any[]) => void; // FIXME
+  editorWillMount: (...args: any[]) => any; // FIXME
+  editorDidMount: (...args: any[]) => any; // FIXME
 }
 
 export default class MonacoEditor extends Component<MonacoProps> {
@@ -37,7 +37,7 @@ export default class MonacoEditor extends Component<MonacoProps> {
   }
 
   // tslint:disable-next-line member-access
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: MonacoProps) {
     if (this.props.value !== this.__current_value) {
       // Always refer to the latest value
       this.__current_value = this.props.value;
