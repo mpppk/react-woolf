@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore_cache
-      - run: npm run build-storybook
+      - run: npm run install
       - save_cache:
           paths:
             - node_modules
@@ -23,6 +23,12 @@ jobs:
       - checkout
       - restore_cache: *restore_cache
       - run: npm test
+  storybook:
+    <<: *build
+    steps:
+      - checkout
+      - restore_cache: *restore_cache
+      - run: npm run build-storybook
 
 workflows:
   version: 2
