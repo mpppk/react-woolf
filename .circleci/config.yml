@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: *restore_cache
-      - run: npm run install
+      - run: npm install
       - save_cache:
           paths:
             - node_modules
