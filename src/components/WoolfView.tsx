@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { JobFuncStat } from 'woolf/src/job';
 import { IJobStat } from 'woolf/src/scheduler/scheduler';
 import {

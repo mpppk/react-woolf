@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import * as dagreD3 from 'dagre-d3';
 import { Label } from 'dagre-d3';
-import React from 'react';
+import * as React from 'react';
 import isEqual from 'react-fast-compare';
 import { Graph } from '../services/Graph';
 import { copyEdges, copyGraphComponents } from '../services/WoolfView';
