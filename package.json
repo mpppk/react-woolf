@@ -12,7 +12,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@material-ui/core": "4.0.1",
+    "@material-ui/core": "4.0.2",
     "d3": "5.9.2",
     "dagre": "0.8.4",
     "dagre-d3": "0.6.3",
