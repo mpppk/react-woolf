@@ -1,19 +1,18 @@
-import { Button } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
+import * as React from 'react';
 import { IJobStat } from 'woolf';
 // import { JobFuncStat } from '../woolf/src/job';
-import ReactJson from 'react-json-view';
 import { JobFuncStat } from 'woolf/src/job';
+import JSONTree from 'react-json-tree';
 
 interface IWoolfStatProps {
   jobStat: IJobStat;
   funcStat: JobFuncStat;
-  onClickCode: (func: (...args) => any) => void;
 }
 
 const to2ColumnTableRow = (col1: string, col2: string) => {
@@ -30,7 +29,7 @@ const to2ColumnTableJsonRow = (col1: string, obj: object) => {
     <TableRow>
       <TableCell scope="row">{col1}</TableCell>
       <TableCell scope="row">
-        <ReactJson src={obj} />
+        <JSONTree data={obj} />
       </TableCell>
     </TableRow>
   );
@@ -81,12 +80,6 @@ const funcStatToFunctionParameterRow = (funcStat?: JobFuncStat) => {
 
 // tslint:disable-next-line variable-name
 export const WoolfStatView: FunctionComponent<IWoolfStatProps> = props => {
-  const handleClick = () => {
-    // FIXME
-    const dummyHandler = () => console.log('hello');
-    props.onClickCode(dummyHandler);
-  };
-
   return (
     <Paper>
       <Table>
@@ -99,12 +92,6 @@ export const WoolfStatView: FunctionComponent<IWoolfStatProps> = props => {
           {funcStatToFunctionOutputPathRow(props.funcStat)}
           {funcStatToFunctionResultPathRow(props.funcStat)}
           {funcStatToFunctionParameterRow(props.funcStat)}
-          <TableRow>
-            <TableCell scope="row">Code</TableCell>
-            <TableCell scope="row">
-              <Button onClick={handleClick}>Open</Button>
-            </TableCell>
-          </TableRow>
         </TableBody>
       </Table>
     </Paper>
