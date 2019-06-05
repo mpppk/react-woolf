@@ -1,4 +1,7 @@
 node_modules/
 .idea/
 .cache/
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts
 storybook-static

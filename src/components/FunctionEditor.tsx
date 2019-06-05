@@ -7,7 +7,7 @@ export interface FunctionEditorProps {
   theme: 'vs-dark'; // FIXME
 }
 
-export default (props: FunctionEditorProps) => {
+export const FunctionEditor = (props: FunctionEditorProps) => {
   const nullHandler = () => null;
 
   const options = {
