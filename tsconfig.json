@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "declaration": true,
     "rootDirs": ["src", "stories"],
     "target": "esnext",
     "module": "esnext",
     "jsx": "react",
     "lib": ["dom", "es2017"],
     "moduleResolution": "node",
-    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "noUnusedLocals": true,
@@ -16,5 +15,5 @@
     "preserveConstEnums": true,
     "sourceMap": true
   },
-  "include": ["./src/**/*"]
+  "files": ["src/index.ts"]
 }

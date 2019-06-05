@@ -1,16 +1,33 @@
 {
   "name": "react-woolf",
+  "description": "React components for woolf",
+  "repository": "https://github.com/mpppk/react-woolf",
   "version": "0.0.1",
   "scripts": {
+    "build": "tsc",
+    "clean": "rimraf src/**/*.js src/**/*.js.map",
     "test": "jest",
-    "type-check": "tsc",
     "parcel": "parcel src/components/",
     "pretty-quick": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "tslint:prettier-check": "tslint-config-prettier-check ./tslint.json",
     "storybook": "NODE_PATH=src start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "npm run clean && npm run build"
   },
+  "files": [
+    "src/**/*.js",
+    "src/**/*.d.ts"
+  ],
+  "keywords": [
+    "aws",
+    "lambda",
+    "woolf",
+    "workflow"
+  ],
+  "author": "mpppk",
+  "license": "MIT",
+  "types": "src/index.d.ts",
   "dependencies": {
     "@material-ui/core": "4.0.2",
     "d3": "5.9.2",
