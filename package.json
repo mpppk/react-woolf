@@ -30,7 +30,7 @@
   "license": "MIT",
   "types": "src/index.d.ts",
   "dependencies": {
-    "@material-ui/core": "4.1.0",
+    "@material-ui/core": "4.1.1",
     "d3": "5.9.2",
     "dagre": "0.8.4",
     "dagre-d3": "0.6.3",
