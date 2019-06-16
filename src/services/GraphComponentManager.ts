@@ -1,4 +1,4 @@
-import isEqual from 'react-fast-compare';
+import * as isEqual from 'react-fast-compare';
 
 // DiffResults represents [addedComponents, updatedComponents, removedComponents]
 export type DiffResults<Component> = [Component[], Component[], Component[]];
