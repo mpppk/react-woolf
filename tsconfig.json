@@ -2,8 +2,8 @@
   "compilerOptions": {
     "declaration": true,
     "rootDirs": ["src", "stories"],
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es5",
+    "module": "commonjs",
     "jsx": "react",
     "lib": ["dom", "es2017"],
     "moduleResolution": "node",
