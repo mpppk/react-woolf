@@ -2,7 +2,7 @@
   "name": "react-woolf",
   "description": "React components for woolf",
   "repository": "https://github.com/mpppk/react-woolf",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "src/index.js",
   "scripts": {
     "build": "tsc",
