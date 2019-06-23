@@ -2,6 +2,7 @@ import * as _ from 'lodash';
 import { IJobStat } from 'woolf';
 import { JobFuncStat, JobFuncState } from 'woolf/src/job';
 import { ICluster, IEdge, INode } from '../components/Dagre';
+import { filterIndex } from './util';
 
 const funcStateToColorCode = (state: JobFuncState): string => {
   switch (state) {
@@ -172,64 +173,15 @@ export const statsToClustersAndNodesAndEdges = (
   const otherNodes = [] as INode[];
   const otherEdges = [] as IEdge[];
   if (mergedOptions.showInput) {
-    const startJobIndices = stats
-      .map((stat, index) => {
-        return stat.isStartJob ? index : undefined;
-      })
-      .filter(i => i !== undefined);
-    const startClusterNames = [] as string[];
-    for (const index of startJobIndices) {
-      const stat = stats[index];
-      startClusterNames.push(toClusterName(stat));
-    }
-
-    const startJobFuncNodes = funcNodes
-      .filter(funcNode => {
-        if (funcNode.length === 0) {
-          return false;
-        }
-        if (startClusterNames.includes(funcNode[0].parent)) {
-          return true;
-        }
-      })
-      .map(nodes => nodes[0]);
-
-    const inputNode = getInputNode();
-    otherNodes.push(inputNode);
-
-    for (const node of startJobFuncNodes) {
-      otherEdges.push(getInputEdge(inputNode.name, node.name));
-    }
+    const [node, edges] = getInputNodeAndEdge(stats, funcNodes);
+    otherNodes.push(node);
+    edges.forEach(edge => otherEdges.push(edge));
   }
 
   if (mergedOptions.showOutput) {
-    const terminusJobIndices = stats
-      .map((stat, index) => {
-        return stat.isTerminusJob ? index : undefined;
-      })
-      .filter(i => i !== undefined);
-    const terminusClusterNames = [] as string[];
-    for (const index of terminusJobIndices) {
-      const stat = stats[index];
-      terminusClusterNames.push(toClusterName(stat));
-    }
-    const terminusJobFuncNodes = funcNodes
-      .filter(funcNode => {
-        if (funcNode.length === 0) {
-          return false;
-        }
-        if (terminusClusterNames.includes(funcNode[0].parent)) {
-          return true;
-        }
-      })
-      .map(nodes => nodes[nodes.length - 1]);
-
-    const outputNode = getOutputNode();
-    otherNodes.push(outputNode);
-
-    for (const node of terminusJobFuncNodes) {
-      otherEdges.push(getOutputEdge(outputNode.name, node.name));
-    }
+    const [node, edges] = getOutputNodeAndEdge(stats, funcNodes);
+    otherNodes.push(node);
+    edges.forEach(edge => otherEdges.push(edge));
   }
 
   const nodes = _.flatten(funcNodes);
@@ -238,6 +190,27 @@ export const statsToClustersAndNodesAndEdges = (
     [...nodes, ...otherNodes],
     [..._.flatten([...edges, ...funcEdges]), ...otherEdges]
   ];
+};
+
+const getClusterNamesByIndex = (stats: IJobStat[], indices: number[]) => {
+  return indices.map(index => {
+    const stat = stats[index];
+    return toClusterName(stat);
+  });
+};
+
+const getFuncNodesByClusterNames = (
+  funcNodes: INode[][],
+  clusterNames: string[]
+) => {
+  return funcNodes.filter(funcNode => {
+    if (funcNode.length === 0) {
+      return false;
+    }
+    if (clusterNames.includes(funcNode[0].parent)) {
+      return true;
+    }
+  });
 };
 
 const getInputNode = (): INode => {
@@ -264,6 +237,45 @@ const getInputEdge = (
         'fill: transparent; stroke: #000; stroke-width: 2px; stroke-dasharray: 5, 5;'
     }
   };
+};
+
+const getInputNodeAndEdge = (
+  stats: IJobStat[],
+  funcNodes: INode[][]
+): [INode, IEdge[]] => {
+  const startJobIndices = filterIndex(stats, stat => stat.isStartJob);
+  const startClusterNames = getClusterNamesByIndex(stats, startJobIndices);
+  const startJobFuncNodes = getFuncNodesByClusterNames(
+    funcNodes,
+    startClusterNames
+  ).map(nodes => nodes[0]);
+
+  const inputNode = getInputNode();
+  return [
+    inputNode,
+    startJobFuncNodes.map(node => getInputEdge(inputNode.name, node.name))
+  ];
+};
+
+const getOutputNodeAndEdge = (
+  stats: IJobStat[],
+  funcNodes: INode[][]
+): [INode, IEdge[]] => {
+  const terminusJobIndices = filterIndex(stats, stat => stat.isTerminusJob);
+  const terminusClusterNames = getClusterNamesByIndex(
+    stats,
+    terminusJobIndices
+  );
+  const terminusJobFuncNodes = getFuncNodesByClusterNames(
+    funcNodes,
+    terminusClusterNames
+  ).map(nodes => nodes[nodes.length - 1]);
+
+  const outputNode = getOutputNode();
+  return [
+    outputNode,
+    terminusJobFuncNodes.map(node => getOutputEdge(outputNode.name, node.name))
+  ];
 };
 
 const getOutputNode = (): INode => {
