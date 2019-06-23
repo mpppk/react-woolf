@@ -16,6 +16,8 @@ const stats: IJobStat[] = [
       } as JobFuncStat
     ],
     id: 0,
+    isStartJob: true,
+    isTerminusJob: false,
     name: 'some-job',
     state: JobState.Done,
     toJobIDs: [1]
@@ -33,6 +35,8 @@ const stats: IJobStat[] = [
       } as JobFuncStat
     ],
     id: 1,
+    isStartJob: false,
+    isTerminusJob: false,
     name: 'another-job',
     state: JobState.Ready,
     toJobIDs: [2, 3]
@@ -46,6 +50,8 @@ const stats: IJobStat[] = [
       } as JobFuncStat
     ],
     id: 2,
+    isStartJob: false,
+    isTerminusJob: true,
     name: 'suspend-job',
     state: JobState.Suspend,
     toJobIDs: []
@@ -59,6 +65,8 @@ const stats: IJobStat[] = [
       } as JobFuncStat
     ],
     id: 3,
+    isStartJob: false,
+    isTerminusJob: true,
     name: 'suspend-job2',
     state: JobState.Suspend,
     toJobIDs: []

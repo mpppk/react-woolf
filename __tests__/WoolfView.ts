@@ -20,6 +20,8 @@ describe('findJobStatByNode', () => {
         fromJobIDs: [],
         funcs: [funcStat],
         id: 0,
+        isStartJob: true,
+        isTerminusJob: false,
         name: 'target-job',
         state: JobState.Ready,
         toJobIDs: []
@@ -28,6 +30,8 @@ describe('findJobStatByNode', () => {
         fromJobIDs: [],
         funcs: [funcStat],
         id: 1,
+        isStartJob: false,
+        isTerminusJob: true,
         name: 'other-job',
         state: JobState.Ready,
         toJobIDs: []
@@ -51,6 +55,8 @@ describe('findJobStatByCluster', () => {
         fromJobIDs: [],
         funcs: [],
         id: 0,
+        isStartJob: true,
+        isTerminusJob: false,
         name: 'target-job',
         state: JobState.Ready,
         toJobIDs: []
@@ -59,6 +65,8 @@ describe('findJobStatByCluster', () => {
         fromJobIDs: [],
         funcs: [],
         id: 1,
+        isStartJob: false,
+        isTerminusJob: true,
         name: 'other-job',
         state: JobState.Ready,
         toJobIDs: []
@@ -91,6 +99,8 @@ describe('statsToClustersAndNodesAndEdges', () => {
         fromJobIDs: [],
         funcs: [funcStat0],
         id: 0,
+        isStartJob: true,
+        isTerminusJob: false,
         name: 'target-job',
         state: JobState.Processing,
         toJobIDs: [1]
@@ -99,6 +109,8 @@ describe('statsToClustersAndNodesAndEdges', () => {
         fromJobIDs: [0],
         funcs: [funcStat1],
         id: 1,
+        isStartJob: false,
+        isTerminusJob: true,
         name: 'other-job',
         state: JobState.Ready,
         toJobIDs: []

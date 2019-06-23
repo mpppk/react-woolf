@@ -17,6 +17,8 @@ describe('WoolfStatView', () => {
         } as JobFuncStat
       ],
       id: 0,
+      isStartJob: true,
+      isTerminusJob: false,
       name: 'some-job',
       state: JobState.Ready,
       toJobIDs: [1]
