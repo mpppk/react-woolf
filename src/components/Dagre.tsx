@@ -17,7 +17,7 @@ export interface ICluster {
 export interface INode {
   name: string;
   label: Label;
-  parent: string;
+  parent?: string;
 }
 
 export interface IEdge {

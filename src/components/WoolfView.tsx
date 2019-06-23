@@ -14,6 +14,8 @@ interface IWoolfProps {
   height: number;
   onClickFuncNode: (jobStat: IJobStat, funcStat: JobFuncStat) => void;
   onClickJobNode: (stat: IJobStat) => void;
+  showInput: boolean;
+  showOutput: boolean;
 }
 
 export class WoolfView extends React.Component<IWoolfProps> {
@@ -33,7 +35,8 @@ export class WoolfView extends React.Component<IWoolfProps> {
   // tslint:disable-next-line member-access
   render() {
     const [clusters, nodes, edges] = statsToClustersAndNodesAndEdges(
-      this.props.stats
+      this.props.stats,
+      { showInput: this.props.showInput, showOutput: this.props.showOutput }
     );
 
     return (
