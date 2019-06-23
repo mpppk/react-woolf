@@ -81,6 +81,8 @@ describe('WoolfView', () => {
         onClickFuncNode={() => {}}
         onClickJobNode={() => {}}
         stats={stats}
+        showInput={true}
+        showOutput={true}
         width={600}
       />
     );

@@ -2,6 +2,7 @@ import * as _ from 'lodash';
 import { IJobStat } from 'woolf';
 import { JobFuncStat, JobFuncState } from 'woolf/src/job';
 import { ICluster, IEdge, INode } from '../components/Dagre';
+import { filterIndex } from './util';
 
 const funcStateToColorCode = (state: JobFuncState): string => {
   switch (state) {
@@ -85,9 +86,28 @@ const toClusterName = (jobStat: IJobStat) => {
   return 'cluster-' + String(jobStat.id);
 };
 
+interface StatsToClustersAndNodesAndEdgesOptions {
+  showInput: boolean;
+  showOutput: boolean;
+}
+
+const defaultStatsToClustersAndNodesAndEdgesOptions: StatsToClustersAndNodesAndEdgesOptions = {
+  showInput: true,
+  showOutput: true
+};
+
 export const statsToClustersAndNodesAndEdges = (
-  stats: IJobStat[]
+  stats: IJobStat[],
+  options?: Partial<StatsToClustersAndNodesAndEdgesOptions>
 ): [ICluster[], INode[], IEdge[]] => {
+  let mergedOptions = defaultStatsToClustersAndNodesAndEdgesOptions;
+  if (options !== undefined) {
+    mergedOptions = {
+      ...mergedOptions,
+      ...options
+    };
+  }
+
   const clusters: ICluster[] = stats.map(
     (stat): ICluster => {
       return {
@@ -149,5 +169,137 @@ export const statsToClustersAndNodesAndEdges = (
       };
     });
   });
-  return [clusters, _.flatten(funcNodes), _.flatten([...edges, ...funcEdges])];
+
+  const otherNodes = [] as INode[];
+  const otherEdges = [] as IEdge[];
+  if (mergedOptions.showInput) {
+    const [node, edges] = getInputNodeAndEdge(stats, funcNodes);
+    otherNodes.push(node);
+    edges.forEach(edge => otherEdges.push(edge));
+  }
+
+  if (mergedOptions.showOutput) {
+    const [node, edges] = getOutputNodeAndEdge(stats, funcNodes);
+    otherNodes.push(node);
+    edges.forEach(edge => otherEdges.push(edge));
+  }
+
+  const nodes = _.flatten(funcNodes);
+  return [
+    clusters,
+    [...nodes, ...otherNodes],
+    [..._.flatten([...edges, ...funcEdges]), ...otherEdges]
+  ];
+};
+
+const getClusterNamesByIndex = (stats: IJobStat[], indices: number[]) => {
+  return indices.map(index => {
+    const stat = stats[index];
+    return toClusterName(stat);
+  });
+};
+
+const getFuncNodesByClusterNames = (
+  funcNodes: INode[][],
+  clusterNames: string[]
+) => {
+  return funcNodes.filter(funcNode => {
+    if (funcNode.length === 0) {
+      return false;
+    }
+    if (clusterNames.includes(funcNode[0].parent)) {
+      return true;
+    }
+  });
+};
+
+export const getInputNode = (): INode => {
+  return {
+    label: {
+      class: 'input',
+      label: `Input`,
+      style: `fill: gold; stroke: #333; stroke-width: 1.5px;`
+    },
+    name: 'input'
+  };
+};
+
+export const getInputEdge = (
+  inputNodeName: string,
+  firstFuncNodeName: string
+): IEdge => {
+  return {
+    name: inputNodeName,
+    targetId: firstFuncNodeName,
+    value: {
+      arrowheadStyle: 'fill: #000',
+      style:
+        'fill: transparent; stroke: #000; stroke-width: 2px; stroke-dasharray: 5, 5;'
+    }
+  };
+};
+
+const getInputNodeAndEdge = (
+  stats: IJobStat[],
+  funcNodes: INode[][]
+): [INode, IEdge[]] => {
+  const startJobIndices = filterIndex(stats, stat => stat.isStartJob);
+  const startClusterNames = getClusterNamesByIndex(stats, startJobIndices);
+  const startJobFuncNodes = getFuncNodesByClusterNames(
+    funcNodes,
+    startClusterNames
+  ).map(nodes => nodes[0]);
+
+  const inputNode = getInputNode();
+  return [
+    inputNode,
+    startJobFuncNodes.map(node => getInputEdge(inputNode.name, node.name))
+  ];
+};
+
+const getOutputNodeAndEdge = (
+  stats: IJobStat[],
+  funcNodes: INode[][]
+): [INode, IEdge[]] => {
+  const terminusJobIndices = filterIndex(stats, stat => stat.isTerminusJob);
+  const terminusClusterNames = getClusterNamesByIndex(
+    stats,
+    terminusJobIndices
+  );
+  const terminusJobFuncNodes = getFuncNodesByClusterNames(
+    funcNodes,
+    terminusClusterNames
+  ).map(nodes => nodes[nodes.length - 1]);
+
+  const outputNode = getOutputNode();
+  return [
+    outputNode,
+    terminusJobFuncNodes.map(node => getOutputEdge(outputNode.name, node.name))
+  ];
+};
+
+export const getOutputNode = (): INode => {
+  return {
+    label: {
+      class: 'output',
+      label: `Output`,
+      style: `fill: gold; stroke: #333; stroke-width: 1.5px;`
+    },
+    name: 'output'
+  };
+};
+
+export const getOutputEdge = (
+  outputNodeName: string,
+  lastFuncNodeName: string
+): IEdge => {
+  return {
+    name: lastFuncNodeName,
+    targetId: outputNodeName,
+    value: {
+      arrowheadStyle: 'fill: #000',
+      style:
+        'fill: transparent; stroke: #000; stroke-width: 2px; stroke-dasharray: 5, 5;'
+    }
+  };
 };

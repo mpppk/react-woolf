@@ -7,6 +7,8 @@ export const jobStat = {
     }
   ],
   id: 0,
+  isStartJob: true,
+  isTerminusJob: false,
   name: 'some-job',
   state: 'DONE',
   toJobIDs: [1]
@@ -37,6 +39,8 @@ export const stats = [
       }
     ],
     id: 0,
+    isStartJob: true,
+    isTerminusJob: false,
     name: 'some-job',
     state: 'DONE',
     toJobIDs: [1]
@@ -54,6 +58,8 @@ export const stats = [
       }
     ],
     id: 1,
+    isStartJob: false,
+    isTerminusJob: false,
     name: 'another-job',
     state: 'READY',
     toJobIDs: [2, 3]
@@ -67,6 +73,8 @@ export const stats = [
       }
     ],
     id: 2,
+    isStartJob: false,
+    isTerminusJob: true,
     name: 'suspend-job',
     state: 'SUSPEND',
     toJobIDs: []
@@ -80,6 +88,8 @@ export const stats = [
       }
     ],
     id: 3,
+    isStartJob: false,
+    isTerminusJob: true,
     name: 'suspend-job2',
     state: 'SUSPEND',
     toJobIDs: []
@@ -95,6 +105,8 @@ export const jobStatForWoolfStatViewFunctionSelected = {
     }
   ],
   id: 0,
+  isStartJob: true,
+  isTerminusJob: false,
   name: 'some-job',
   state: 'DONE',
   toJobIDs: [1]

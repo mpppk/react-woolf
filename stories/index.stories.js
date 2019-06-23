@@ -39,6 +39,8 @@ storiesOf('WoolfView', module).add('Processing', () => {
       onClickJobNode={action('onClickJobNode')}
       stats={stats}
       width={600}
+      showInput={true}
+      showOutput={true}
     />
   );
 });

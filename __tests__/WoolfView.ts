@@ -5,6 +5,10 @@ import { ICluster, INode } from '../src/components/Dagre';
 import {
   findJobStatByCluster,
   findJobStatByNode,
+  getInputEdge,
+  getInputNode,
+  getOutputEdge,
+  getOutputNode,
   statsToClustersAndNodesAndEdges
 } from '../src/services/WoolfView';
 
@@ -155,7 +159,9 @@ describe('statsToClustersAndNodesAndEdges', () => {
         },
         name: '1-other-job-other-func',
         parent: 'cluster-1'
-      }
+      },
+      getInputNode(),
+      getOutputNode()
     ];
     const expectedEdges = [
       {
@@ -166,7 +172,9 @@ describe('statsToClustersAndNodesAndEdges', () => {
           style:
             'fill: transparent; stroke: #000; stroke-width: 2px; stroke-dasharray: 5, 5;'
         }
-      }
+      },
+      getInputEdge('input', '0-target-job-target-func'),
+      getOutputEdge('output', '1-other-job-other-func')
     ];
 
     const [clusters, nodes, edges] = statsToClustersAndNodesAndEdges(stats);

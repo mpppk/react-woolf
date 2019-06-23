@@ -12,7 +12,7 @@
     "pretty-quick": "pretty-quick",
     "precommit": "pretty-quick --staged",
     "tslint:prettier-check": "tslint-config-prettier-check ./tslint.json",
-    "storybook": "NODE_PATH=src start-storybook -p 6006",
+    "storybook": "npm run clean && NODE_PATH=src start-storybook -p 6006",
     "build-storybook": "npm run clean && build-storybook --quiet",
     "prepare": "npm run clean && npm run build"
   },
