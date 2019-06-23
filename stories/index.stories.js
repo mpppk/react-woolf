@@ -38,6 +38,8 @@ storiesOf('WoolfView', module)
         height={600}
         onClickFuncNode={action('onClickFuncNode')}
         onClickJobNode={action('onClickJobNode')}
+        onClickInputNode={action('onClickInputNode')}
+        onClickOutputNode={action('onClickOutputNode')}
         stats={stats}
         width={600}
         showInput={true}
