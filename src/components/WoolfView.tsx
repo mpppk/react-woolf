@@ -4,6 +4,8 @@ import { IJobStat } from 'woolf/src/scheduler/scheduler';
 import {
   findJobStatByCluster,
   findJobStatByNode,
+  INPUT_NODE_NAME,
+  OUTPUT_NODE_NAME,
   statsToClustersAndNodesAndEdges
 } from '../services/WoolfView';
 import Dagre, { ICluster, INode } from './Dagre';
@@ -14,6 +16,8 @@ interface IWoolfProps {
   height: number;
   onClickFuncNode: (jobStat: IJobStat, funcStat: JobFuncStat) => void;
   onClickJobNode: (stat: IJobStat) => void;
+  onClickInputNode?: () => void;
+  onClickOutputNode?: () => void;
   showInput: boolean;
   showOutput: boolean;
 }
@@ -30,6 +34,18 @@ export class WoolfView extends React.Component<IWoolfProps> {
   }
 
   public handleClickNode(node: INode) {
+    if (node.name === INPUT_NODE_NAME) {
+      if (this.props.onClickInputNode) {
+        this.props.onClickInputNode();
+      }
+      return;
+    }
+    if (node.name === OUTPUT_NODE_NAME) {
+      if (this.props.onClickOutputNode) {
+        this.props.onClickOutputNode();
+      }
+      return;
+    }
     this.props.onClickFuncNode(...findJobStatByNode(this.props.stats, node));
   }
   // tslint:disable-next-line member-access

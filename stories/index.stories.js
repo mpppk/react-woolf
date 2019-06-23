@@ -31,16 +31,32 @@ storiesOf('WoolfStatView', module)
     );
   });
 
-storiesOf('WoolfView', module).add('Processing', () => {
-  return (
-    <WoolfView
-      height={600}
-      onClickFuncNode={action('onClickFuncNode')}
-      onClickJobNode={action('onClickJobNode')}
-      stats={stats}
-      width={600}
-      showInput={true}
-      showOutput={true}
-    />
-  );
-});
+storiesOf('WoolfView', module)
+  .add('Show Input/Output', () => {
+    return (
+      <WoolfView
+        height={600}
+        onClickFuncNode={action('onClickFuncNode')}
+        onClickJobNode={action('onClickJobNode')}
+        onClickInputNode={action('onClickInputNode')}
+        onClickOutputNode={action('onClickOutputNode')}
+        stats={stats}
+        width={600}
+        showInput={true}
+        showOutput={true}
+      />
+    );
+  })
+  .add('Hide Input/Output', () => {
+    return (
+      <WoolfView
+        height={600}
+        onClickFuncNode={action('onClickFuncNode')}
+        onClickJobNode={action('onClickJobNode')}
+        stats={stats}
+        width={600}
+        showInput={false}
+        showOutput={false}
+      />
+    );
+  });

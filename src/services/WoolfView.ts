@@ -4,6 +4,9 @@ import { JobFuncStat, JobFuncState } from 'woolf/src/job';
 import { ICluster, IEdge, INode } from '../components/Dagre';
 import { filterIndex } from './util';
 
+export const INPUT_NODE_NAME = 'input';
+export const OUTPUT_NODE_NAME = 'output';
+
 const funcStateToColorCode = (state: JobFuncState): string => {
   switch (state) {
     case JobFuncState.Done:
@@ -216,11 +219,11 @@ const getFuncNodesByClusterNames = (
 export const getInputNode = (): INode => {
   return {
     label: {
-      class: 'input',
+      class: INPUT_NODE_NAME,
       label: `Input`,
       style: `fill: gold; stroke: #333; stroke-width: 1.5px;`
     },
-    name: 'input'
+    name: INPUT_NODE_NAME
   };
 };
 
@@ -281,11 +284,11 @@ const getOutputNodeAndEdge = (
 export const getOutputNode = (): INode => {
   return {
     label: {
-      class: 'output',
+      class: OUTPUT_NODE_NAME,
       label: `Output`,
       style: `fill: gold; stroke: #333; stroke-width: 1.5px;`
     },
-    name: 'output'
+    name: OUTPUT_NODE_NAME
   };
 };
 
