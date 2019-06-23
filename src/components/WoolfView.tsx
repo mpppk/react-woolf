@@ -4,8 +4,8 @@ import { IJobStat } from 'woolf/src/scheduler/scheduler';
 import {
   findJobStatByCluster,
   findJobStatByNode,
-  INPUT_NODE_NAME,
-  OUTPUT_NODE_NAME,
+  DEFAULT_INPUT_NODE_NAME,
+  DEFAULT_OUTPUT_NODE_NAME,
   statsToClustersAndNodesAndEdges
 } from '../services/WoolfView';
 import Dagre, { ICluster, INode } from './Dagre';
@@ -18,11 +18,18 @@ interface IWoolfProps {
   onClickJobNode: (stat: IJobStat) => void;
   onClickInputNode?: () => void;
   onClickOutputNode?: () => void;
+  inputNodeLabel: string;
+  outputNodeLabel: string;
   showInput: boolean;
   showOutput: boolean;
 }
 
 export class WoolfView extends React.Component<IWoolfProps> {
+  public static defaultProps: Partial<IWoolfProps> = {
+    inputNodeLabel: 'Input',
+    outputNodeLabel: 'Output'
+  };
+
   constructor(props) {
     super(props);
     this.handleClickNode = this.handleClickNode.bind(this);
@@ -34,13 +41,13 @@ export class WoolfView extends React.Component<IWoolfProps> {
   }
 
   public handleClickNode(node: INode) {
-    if (node.name === INPUT_NODE_NAME) {
+    if (node.name === DEFAULT_INPUT_NODE_NAME) {
       if (this.props.onClickInputNode) {
         this.props.onClickInputNode();
       }
       return;
     }
-    if (node.name === OUTPUT_NODE_NAME) {
+    if (node.name === DEFAULT_OUTPUT_NODE_NAME) {
       if (this.props.onClickOutputNode) {
         this.props.onClickOutputNode();
       }
@@ -52,7 +59,12 @@ export class WoolfView extends React.Component<IWoolfProps> {
   render() {
     const [clusters, nodes, edges] = statsToClustersAndNodesAndEdges(
       this.props.stats,
-      { showInput: this.props.showInput, showOutput: this.props.showOutput }
+      {
+        showInput: this.props.showInput,
+        showOutput: this.props.showOutput,
+        inputNodeLabel: this.props.inputNodeLabel,
+        outputNodeLabel: this.props.outputNodeLabel
+      }
     );
 
     return (
