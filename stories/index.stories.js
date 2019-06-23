@@ -40,6 +40,8 @@ storiesOf('WoolfView', module)
         onClickJobNode={action('onClickJobNode')}
         onClickInputNode={action('onClickInputNode')}
         onClickOutputNode={action('onClickOutputNode')}
+        inputNodeLabel={'InputText'}
+        outputNodeLabel={'OutputText'}
         stats={stats}
         width={600}
         showInput={true}

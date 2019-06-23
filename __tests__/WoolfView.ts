@@ -9,9 +9,11 @@ import {
   getInputNode,
   getOutputEdge,
   getOutputNode,
-  INPUT_NODE_NAME,
-  OUTPUT_NODE_NAME,
-  statsToClustersAndNodesAndEdges
+  DEFAULT_INPUT_NODE_NAME,
+  DEFAULT_OUTPUT_NODE_NAME,
+  statsToClustersAndNodesAndEdges,
+  DEFAULT_OUTPUT_NODE_LABEL,
+  DEFAULT_INPUT_NODE_LABEL
 } from '../src/services/WoolfView';
 
 describe('findJobStatByNode', () => {
@@ -162,8 +164,8 @@ describe('statsToClustersAndNodesAndEdges', () => {
         name: '1-other-job-other-func',
         parent: 'cluster-1'
       },
-      getInputNode(),
-      getOutputNode()
+      getInputNode(DEFAULT_INPUT_NODE_LABEL),
+      getOutputNode(DEFAULT_OUTPUT_NODE_LABEL)
     ];
     const expectedEdges = [
       {
@@ -175,8 +177,8 @@ describe('statsToClustersAndNodesAndEdges', () => {
             'fill: transparent; stroke: #000; stroke-width: 2px; stroke-dasharray: 5, 5;'
         }
       },
-      getInputEdge(INPUT_NODE_NAME, '0-target-job-target-func'),
-      getOutputEdge(OUTPUT_NODE_NAME, '1-other-job-other-func')
+      getInputEdge(DEFAULT_INPUT_NODE_NAME, '0-target-job-target-func'),
+      getOutputEdge(DEFAULT_OUTPUT_NODE_NAME, '1-other-job-other-func')
     ];
 
     const [clusters, nodes, edges] = statsToClustersAndNodesAndEdges(stats);
