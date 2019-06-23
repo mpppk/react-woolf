@@ -213,7 +213,7 @@ const getFuncNodesByClusterNames = (
   });
 };
 
-const getInputNode = (): INode => {
+export const getInputNode = (): INode => {
   return {
     label: {
       class: 'input',
@@ -224,7 +224,7 @@ const getInputNode = (): INode => {
   };
 };
 
-const getInputEdge = (
+export const getInputEdge = (
   inputNodeName: string,
   firstFuncNodeName: string
 ): IEdge => {
@@ -278,7 +278,7 @@ const getOutputNodeAndEdge = (
   ];
 };
 
-const getOutputNode = (): INode => {
+export const getOutputNode = (): INode => {
   return {
     label: {
       class: 'output',
@@ -289,7 +289,7 @@ const getOutputNode = (): INode => {
   };
 };
 
-const getOutputEdge = (
+export const getOutputEdge = (
   outputNodeName: string,
   lastFuncNodeName: string
 ): IEdge => {
