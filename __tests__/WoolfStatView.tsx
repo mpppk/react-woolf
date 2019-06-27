@@ -9,6 +9,7 @@ import Table from '@material-ui/core/Table';
 describe('WoolfStatView', () => {
   it('has Paper', async () => {
     const jobStat: IJobStat = {
+      environment: 'pending',
       fromJobIDs: [],
       funcs: [
         {

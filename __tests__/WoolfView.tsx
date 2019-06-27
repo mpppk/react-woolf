@@ -8,6 +8,7 @@ import Dagre from '../src/components/Dagre';
 
 const stats: IJobStat[] = [
   {
+    environment: 'local',
     fromJobIDs: [],
     funcs: [
       {
@@ -23,6 +24,7 @@ const stats: IJobStat[] = [
     toJobIDs: [1]
   },
   {
+    environment: 'local',
     fromJobIDs: [0],
     funcs: [
       {
@@ -42,6 +44,7 @@ const stats: IJobStat[] = [
     toJobIDs: [2, 3]
   },
   {
+    environment: 'pending',
     fromJobIDs: [1],
     funcs: [
       {
@@ -57,6 +60,7 @@ const stats: IJobStat[] = [
     toJobIDs: []
   },
   {
+    environment: 'pending',
     fromJobIDs: [2],
     funcs: [
       {

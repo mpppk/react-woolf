@@ -25,6 +25,7 @@ describe('findJobStatByNode', () => {
 
     const stats: IJobStat[] = [
       {
+        environment: 'pending',
         fromJobIDs: [],
         funcs: [funcStat],
         id: 0,
@@ -35,6 +36,7 @@ describe('findJobStatByNode', () => {
         toJobIDs: []
       },
       {
+        environment: 'pending',
         fromJobIDs: [],
         funcs: [funcStat],
         id: 1,
@@ -60,6 +62,7 @@ describe('findJobStatByCluster', () => {
   it('can find job by cluster', async () => {
     const stats: IJobStat[] = [
       {
+        environment: 'pending',
         fromJobIDs: [],
         funcs: [],
         id: 0,
@@ -70,6 +73,7 @@ describe('findJobStatByCluster', () => {
         toJobIDs: []
       },
       {
+        environment: 'pending',
         fromJobIDs: [],
         funcs: [],
         id: 1,
@@ -104,6 +108,7 @@ describe('statsToClustersAndNodesAndEdges', () => {
 
     const stats: IJobStat[] = [
       {
+        environment: 'local',
         fromJobIDs: [],
         funcs: [funcStat0],
         id: 0,
@@ -114,6 +119,7 @@ describe('statsToClustersAndNodesAndEdges', () => {
         toJobIDs: [1]
       },
       {
+        environment: 'pending',
         fromJobIDs: [0],
         funcs: [funcStat1],
         id: 1,
