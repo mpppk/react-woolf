@@ -1,4 +1,5 @@
 export const jobStat = {
+  environment: 'pending',
   fromJobIDs: [],
   funcs: [
     {
@@ -31,10 +32,11 @@ export const funcStat = {
 
 export const stats = [
   {
+    environment: 'local',
     fromJobIDs: [],
     funcs: [
       {
-        FunctionName: 'test-func01',
+        FunctionName: 'some-func01',
         state: 'DONE'
       }
     ],
@@ -43,64 +45,68 @@ export const stats = [
     isTerminusJob: false,
     name: 'some-job',
     state: 'DONE',
-    toJobIDs: [1]
+    toJobIDs: [1, 2]
   },
   {
+    environment: 'aws',
     fromJobIDs: [0],
     funcs: [
       {
-        FunctionName: 'test-func01',
+        FunctionName: 'aws-func01',
         state: 'PROCESSING'
       },
       {
-        FunctionName: 'test-func06',
+        FunctionName: 'aws-func02',
         state: 'READY'
       }
     ],
     id: 1,
     isStartJob: false,
     isTerminusJob: false,
-    name: 'another-job',
+    name: 'aws-job',
     state: 'READY',
-    toJobIDs: [2, 3]
+    toJobIDs: [3]
   },
   {
-    fromJobIDs: [1],
+    environment: 'local',
+    fromJobIDs: [0],
     funcs: [
       {
-        FunctionName: 'test-func01',
-        state: 'READY'
+        FunctionName: 'local-func01',
+        state: 'PROCESSING'
       }
     ],
     id: 2,
     isStartJob: false,
-    isTerminusJob: true,
-    name: 'suspend-job',
-    state: 'SUSPEND',
-    toJobIDs: []
+    isTerminusJob: false,
+    name: 'local-job',
+    state: 'PROCESSING',
+    toJobIDs: [3]
   },
   {
-    fromJobIDs: [2],
+    environment: 'pending',
+    fromJobIDs: [1, 2],
     funcs: [
       {
-        FunctionName: 'test-func01',
+        FunctionName: 'another-func01',
         state: 'READY'
       }
     ],
     id: 3,
     isStartJob: false,
     isTerminusJob: true,
-    name: 'suspend-job2',
-    state: 'SUSPEND',
+    name: 'another-job',
+    state: 'READY',
     toJobIDs: []
   }
 ];
 
 export const jobStatForWoolfStatViewFunctionSelected = {
+  environment: 'local',
   fromJobIDs: [],
   funcs: [
     {
-      FunctionName: 'test-func01',
+      FunctionName: 'some-func01',
       state: 'DONE'
     }
   ],

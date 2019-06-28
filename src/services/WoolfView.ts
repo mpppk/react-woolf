@@ -3,20 +3,24 @@ import { IJobStat } from 'woolf';
 import { JobFuncStat, JobFuncState } from 'woolf/src/job';
 import { ICluster, IEdge, INode } from '../components/Dagre';
 import { filterIndex } from './util';
+import { JobEnvironment } from 'woolf/src/scheduler/scheduler';
 
 export const DEFAULT_INPUT_NODE_NAME = 'input';
 export const DEFAULT_OUTPUT_NODE_NAME = 'output';
 export const DEFAULT_INPUT_NODE_LABEL = 'Input';
 export const DEFAULT_OUTPUT_NODE_LABEL = 'Output';
 
-const funcStateToColorCode = (state: JobFuncState): string => {
+const funcStateToColorCode = (
+  state: JobFuncState,
+  env: JobEnvironment
+): string => {
   switch (state) {
     case JobFuncState.Done:
       return '#a0ffb3';
     case JobFuncState.Ready:
       return '#FF9E0F';
     case JobFuncState.Processing:
-      return '#45E810';
+      return env === 'local' ? '#45E810' : 'seagreen';
   }
 };
 
@@ -134,12 +138,17 @@ export const statsToClustersAndNodesAndEdges = (
   const funcNodes: INode[][] = stats.map(stat => {
     return stat.funcs.map(
       (funcStat): INode => {
+        const env =
+          funcStat.state === JobFuncState.Ready
+            ? ''
+            : ' on ' + stat.environment;
         return {
           label: {
             class: 'node-' + toNodeName(stat, funcStat),
-            label: `${funcStat.FunctionName}(${funcStat.state})`,
+            label: `${funcStat.FunctionName}(${funcStat.state}${env})`,
             style: `fill: ${funcStateToColorCode(
-              funcStat.state
+              funcStat.state,
+              stat.environment
             )}; stroke: #333; stroke-width: 1.5px;`
           },
           name: toNodeName(stat, funcStat),
