@@ -155,7 +155,7 @@ describe('statsToClustersAndNodesAndEdges', () => {
       {
         label: {
           class: 'node-0-target-job-target-func',
-          label: 'target-func(PROCESSING)',
+          label: 'target-func(PROCESSING on local)',
           style: 'fill: #45E810; stroke: #333; stroke-width: 1.5px;'
         },
         name: '0-target-job-target-func',
