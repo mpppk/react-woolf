@@ -73,6 +73,26 @@ const funcStatToFunctionResultPathRow = (funcStat?: JobFuncStat) => {
   return to2ColumnTableRow('ResultPath', resultPath);
 };
 
+const jobStatToEventRow = (jobStat?: IJobStat) => {
+  const event = jobStat && jobStat.event ? jobStat.event : {};
+  return to2ColumnTableJsonRow('Job Event', event);
+};
+
+const jobStatToResultsRow = (jobStat?: IJobStat) => {
+  const results = jobStat && jobStat.results ? jobStat.results : {};
+  return to2ColumnTableJsonRow('Job Results', results);
+};
+
+const funcStatToEventRow = (funcStat?: JobFuncStat) => {
+  const event = funcStat && funcStat.event ? funcStat.event : {};
+  return to2ColumnTableJsonRow('Function Event', event);
+};
+
+const funcStatToResultsRow = (funcStat?: JobFuncStat) => {
+  const results = funcStat && funcStat.results ? funcStat.results : {};
+  return to2ColumnTableJsonRow('Function Results', results);
+};
+
 const funcStatToFunctionParameterRow = (funcStat?: JobFuncStat) => {
   const parameter = funcStat && funcStat.Parameters ? funcStat.Parameters : {};
   return to2ColumnTableJsonRow('Parameters', parameter);
@@ -91,7 +111,11 @@ export const WoolfStatView: FunctionComponent<IWoolfStatProps> = props => {
           {funcStatToFunctionInputPathRow(props.funcStat)}
           {funcStatToFunctionOutputPathRow(props.funcStat)}
           {funcStatToFunctionResultPathRow(props.funcStat)}
+          {jobStatToEventRow(props.jobStat)}
+          {jobStatToResultsRow(props.jobStat)}
           {funcStatToFunctionParameterRow(props.funcStat)}
+          {funcStatToEventRow(props.funcStat)}
+          {funcStatToResultsRow(props.funcStat)}
         </TableBody>
       </Table>
     </Paper>
