@@ -29,7 +29,7 @@ const to2ColumnTableJsonRow = (col1: string, obj: object) => {
     <TableRow>
       <TableCell scope="row">{col1}</TableCell>
       <TableCell scope="row">
-        <JSONTree data={obj} />
+        {obj === undefined ? '-' : <JSONTree data={obj} />}
       </TableCell>
     </TableRow>
   );
@@ -74,27 +74,37 @@ const funcStatToFunctionResultPathRow = (funcStat?: JobFuncStat) => {
 };
 
 const jobStatToPayloadRow = (jobStat?: IJobStat) => {
-  const event = jobStat && jobStat.payload ? jobStat.payload : {};
-  return to2ColumnTableJsonRow('Job Event', event);
+  const event = jobStat ? jobStat.payload : undefined;
+  return to2ColumnTableJsonRow('Job Payload', event);
 };
 
 const jobStatToResultsRow = (jobStat?: IJobStat) => {
-  const results = jobStat && jobStat.results ? jobStat.results : {};
+  const results = jobStat ? jobStat.results : undefined;
   return to2ColumnTableJsonRow('Job Results', results);
 };
 
+const funcStatToPayloadRow = (funcStat?: JobFuncStat) => {
+  const payload = funcStat ? funcStat.payload : undefined;
+  return to2ColumnTableJsonRow('Function Payload', payload);
+};
+
 const funcStatToEventRow = (funcStat?: JobFuncStat) => {
-  const event = funcStat && funcStat.event ? funcStat.event : {};
+  const event = funcStat ? funcStat.event : undefined;
   return to2ColumnTableJsonRow('Function Event', event);
 };
 
+const funcStatToRawResultsRow = (funcStat?: JobFuncStat) => {
+  const rawResults = funcStat ? funcStat.rawResults : undefined;
+  return to2ColumnTableJsonRow('Function Raw Results', rawResults);
+};
+
 const funcStatToResultsRow = (funcStat?: JobFuncStat) => {
-  const results = funcStat && funcStat.results ? funcStat.results : {};
+  const results = funcStat ? funcStat.results : undefined;
   return to2ColumnTableJsonRow('Function Results', results);
 };
 
 const funcStatToFunctionParameterRow = (funcStat?: JobFuncStat) => {
-  const parameter = funcStat && funcStat.Parameters ? funcStat.Parameters : {};
+  const parameter = funcStat ? funcStat.Parameters : undefined;
   return to2ColumnTableJsonRow('Parameters', parameter);
 };
 
@@ -114,7 +124,9 @@ export const WoolfStatView: FunctionComponent<IWoolfStatProps> = props => {
           {jobStatToPayloadRow(props.jobStat)}
           {jobStatToResultsRow(props.jobStat)}
           {funcStatToFunctionParameterRow(props.funcStat)}
+          {funcStatToPayloadRow(props.funcStat)}
           {funcStatToEventRow(props.funcStat)}
+          {funcStatToRawResultsRow(props.funcStat)}
           {funcStatToResultsRow(props.funcStat)}
         </TableBody>
       </Table>
