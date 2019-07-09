@@ -42,7 +42,7 @@
     "woolf": "0.0.13"
   },
   "devDependencies": {
-    "@babel/core": "7.5.0",
+    "@babel/core": "7.5.4",
     "@storybook/addon-actions": "5.1.9",
     "@storybook/addon-console": "1.1.1",
     "@storybook/addon-info": "5.1.9",
