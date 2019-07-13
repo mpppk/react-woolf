@@ -12,8 +12,8 @@ import Dagre, { ICluster, INode } from './Dagre';
 
 interface IWoolfProps {
   stats: IJobStat[];
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
   onClickFuncNode: (jobStat: IJobStat, funcStat: JobFuncStat) => void;
   onClickJobNode: (stat: IJobStat) => void;
   onClickInputNode?: () => void;
