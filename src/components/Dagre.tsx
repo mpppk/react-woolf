@@ -31,8 +31,8 @@ interface IDagreProps {
   nodes: INode[];
   edges: IEdge[];
   zoom: number;
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
   onClickNode: (node: INode) => void;
   onClickCluster: (cluster: ICluster) => void;
   // onComponentDidMount: () => void;
