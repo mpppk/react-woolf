@@ -5,11 +5,13 @@ import { action } from '@storybook/addon-actions';
 import { WoolfStatView } from '../src/components/WoolfStatView';
 import { WoolfView } from '../src/components/WoolfView';
 import {
+  failedStats,
   funcStat,
   jobStat,
   jobStatForWoolfStatViewFunctionSelected,
   stats
 } from './data';
+import { JobFuncState } from 'woolf/src/job';
 
 storiesOf('WoolfStatView', module)
   .add('function selected', () => {
@@ -56,6 +58,19 @@ storiesOf('WoolfView', module)
         onClickFuncNode={action('onClickFuncNode')}
         onClickJobNode={action('onClickJobNode')}
         stats={stats}
+        width={600}
+        showInput={false}
+        showOutput={false}
+      />
+    );
+  })
+  .add('Failed Workflow', () => {
+    return (
+      <WoolfView
+        height={600}
+        onClickFuncNode={action('onClickFuncNode')}
+        onClickJobNode={action('onClickJobNode')}
+        stats={failedStats}
         width={600}
         showInput={false}
         showOutput={false}

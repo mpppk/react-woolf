@@ -131,6 +131,30 @@ export const stats = [
   }
 ];
 
+export const failedStats = [
+  {
+    environment: 'local',
+    payload: { count: 0 },
+    results: {},
+    fromJobIDs: [],
+    funcs: [
+      {
+        event: { count: 0 },
+        payload: { count: 0 },
+        rawResults: {},
+        results: {},
+        FunctionName: 'fail-func01',
+        state: 'FAILED'
+      }
+    ],
+    id: 0,
+    isStartJob: true,
+    isTerminusJob: true,
+    name: 'some-job',
+    state: 'FAILED',
+    toJobIDs: []
+  }
+];
 export const jobStatForWoolfStatViewFunctionSelected = {
   environment: 'local',
   payload: { count: 0 },
