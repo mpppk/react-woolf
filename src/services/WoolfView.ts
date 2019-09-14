@@ -3,7 +3,7 @@ import { IJobStat } from 'woolf';
 import { JobFuncStat, JobFuncState } from 'woolf/src/job';
 import { ICluster, IEdge, INode } from '../components/Dagre';
 import { filterIndex } from './util';
-import { JobEnvironment } from 'woolf/src/scheduler/scheduler';
+import { JobEnvironment, JobState } from 'woolf/src/scheduler/scheduler';
 
 export const DEFAULT_INPUT_NODE_NAME = 'input';
 export const DEFAULT_OUTPUT_NODE_NAME = 'output';
@@ -21,7 +21,16 @@ const funcStateToColorCode = (
       return '#FF9E0F';
     case JobFuncState.Processing:
       return env === 'local' ? '#45E810' : 'seagreen';
+    case JobFuncState.Failed:
+      return '#dc143c';
   }
+};
+
+const jobStateToColorCode = (state: JobState): string => {
+  if (state === JobState.Failed) {
+    return '#e6b8c7';
+  }
+  return '#d3d7e8';
 };
 
 export const findJobStatByNode = (
@@ -128,7 +137,7 @@ export const statsToClustersAndNodesAndEdges = (
         label: {
           class: 'cluster-' + stat.name,
           label: stat.name,
-          style: 'fill: #d3d7e8'
+          style: `fill: ${jobStateToColorCode(stat.state)}`
         },
         name: toClusterName(stat)
       };
