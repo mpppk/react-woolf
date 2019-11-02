@@ -39,7 +39,7 @@
     "react-fast-compare": "2.0.4",
     "react-json-tree": "0.11.2",
     "react-json-view": "1.19.1",
-    "woolf": "0.0.15"
+    "woolf": "0.0.16"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
