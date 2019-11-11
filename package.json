@@ -68,7 +68,7 @@
     "monaco-editor-webpack-plugin": "1.7.0",
     "parcel": "1.12.4",
     "prettier": "1.19.1",
-    "pretty-quick": "2.0.0",
+    "pretty-quick": "2.0.1",
     "react-docgen-typescript-loader": "3.3.0",
     "sinon": "7.5.0",
     "ts-jest": "24.1.0",
