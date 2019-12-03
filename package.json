@@ -32,7 +32,7 @@
   "dependencies": {
     "@material-ui/core": "4.7.1",
     "d3": "5.14.2",
-    "dagre": "0.8.4",
+    "dagre": "0.8.5",
     "dagre-d3": "0.6.3",
     "monaco-editor": "0.18.1",
     "react": "16.12.0",
