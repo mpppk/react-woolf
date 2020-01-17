@@ -55,7 +55,7 @@
     "@types/d3": "5.7.2",
     "@types/dagre-d3": "0.4.39",
     "@types/jest": "24.9.0",
-    "@types/storybook__addon-actions": "3.4.3",
+    "@types/storybook__addon-actions": "5.2.1",
     "@types/storybook__addon-info": "4.1.2",
     "@types/storybook__addon-knobs": "5.0.4",
     "@types/storybook__react": "4.0.2",
