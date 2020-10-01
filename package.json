@@ -50,7 +50,7 @@
     "@storybook/addon-viewport": "5.3.21",
     "@storybook/addons": "5.3.21",
     "@storybook/react": "5.3.21",
-    "@types/d3": "5.16.0",
+    "@types/d3": "5.16.1",
     "@types/dagre-d3": "0.4.39",
     "@types/jest": "24.9.1",
     "@types/storybook__addon-actions": "3.4.3",
