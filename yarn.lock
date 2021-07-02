@@ -1439,7 +1439,7 @@
     prop-types "^15.7.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@5.3.21":
+"@storybook/addons@5.3.21", "@storybook/addons@^5.2.0":
   version "5.3.21"
   resolved "https://registry.npmjs.org/@storybook/addons/-/addons-5.3.21.tgz"
   integrity sha512-Ji/21WADTLVbTbiKcZ64BcL0Es+h1Afxx3kNmGJqPSTUYroCwIFCT9mUzCqU6G+YyWaISAmTii5UJkTwMkChwA==
@@ -1658,7 +1658,7 @@
     pretty-hrtime "^1.0.3"
     regenerator-runtime "^0.13.3"
 
-"@storybook/react@5.3.21":
+"@storybook/react@5.3.21", "@storybook/react@^5.2.0":
   version "5.3.21"
   resolved "https://registry.npmjs.org/@storybook/react/-/react-5.3.21.tgz"
   integrity sha512-A50F8dDZxyLGa/dE3q0Zxt7T5r9UbomoSclqw7oJTO9GI76QOu7GfsoWrEL2gTEDAmqXreLVQqGuTLQhBz0rlA==
@@ -2330,13 +2330,14 @@
   resolved "https://registry.npmjs.org/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.3.tgz"
   integrity sha512-RSFFfruUHL7La4CZpuiKZ0mZvr5orjenFA2jc31tfPwvA3fYNH4/9XSfA2MB08IpJbF3aErtYWT5Dtigkxnltg==
 
-"@types/storybook__addon-info@4.1.2":
-  version "4.1.2"
-  resolved "https://registry.npmjs.org/@types/storybook__addon-info/-/storybook__addon-info-4.1.2.tgz"
-  integrity sha512-zr2+pLF+BYHz0gNKtFj+oorXyJsOoaeyvrtOLrGUABPUKc1lv/k/7sALK0bjX8lfaYpgsukWD+k8uPf79EABtA==
+"@types/storybook__addon-info@5.2.4":
+  version "5.2.4"
+  resolved "https://registry.npmjs.org/@types/storybook__addon-info/-/storybook__addon-info-5.2.4.tgz"
+  integrity sha512-G0MFd0lYHjcGQwhrwqADiSUtoGRBB3Sbt8BQ7c8BuInjwyBtHnel3Rq8pll5Og5Nifs9NT0+j8uPgVTY5m/5ow==
   dependencies:
+    "@storybook/addons" "^5.2.0"
+    "@storybook/react" "^5.2.0"
     "@types/react" "*"
-    "@types/storybook__react" "*"
 
 "@types/storybook__addon-knobs@5.0.4":
   version "5.0.4"
@@ -9145,9 +9146,9 @@ nearley@^2.7.10:
     semver "^5.4.1"
 
 needle@^2.2.1:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-2.6.0.tgz#24dbb55f2509e2324b4a99d61f413982013ccdbe"
-  integrity sha512-KKYdza4heMsEfSWD7VPUIz3zX2XDwOyX2d+geb4vrERZMT5RMU6ujjaD+I5Yr54uZxQ2w6XRTAhHBbSCyovZBg==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/needle/-/needle-2.7.0.tgz#90e020b9a1e33253fcf009d22927b130c8b2fd8b"
+  integrity sha512-b4f4JgOl7GZVM1p+xuWBAsHwflng1s2yOu9lOThKAzULRW7eqSFYfN4gbuUFOMuE0hVAPWJnSz/90LMOlEGErw==
   dependencies:
     debug "^3.2.6"
     iconv-lite "^0.4.4"
