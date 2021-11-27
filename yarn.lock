@@ -1034,11 +1034,6 @@
   resolved "https://registry.npmjs.org/@iarna/toml/-/toml-2.2.3.tgz"
   integrity sha512-FmuxfCuolpLl0AnQ2NHSzoUKWEJDFl63qXjzdoWBVyFCXzMGm1spBzk7LeHNoVCiWCF7mRVms9e6jEV9+MoPbg==
 
-"@icons/material@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.npmjs.org/@icons/material/-/material-0.2.4.tgz"
-  integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
-
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.npmjs.org/@jest/console/-/console-24.9.0.tgz"
@@ -1363,29 +1358,22 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@5.3.21":
-  version "5.3.21"
-  resolved "https://registry.npmjs.org/@storybook/addon-knobs/-/addon-knobs-5.3.21.tgz"
-  integrity sha512-w1g61n2j87i3bzBltNl64u2hH06xQHKitfWWKBfRCiy1plC1hjZQ31GiUrA7uLUrD4NUx3GNO9dw0cDTnIIHRw==
+"@storybook/addon-knobs@6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-6.4.0.tgz#fa5943ef21826cdc2e20ded74edfdf5a6dc71dcf"
+  integrity sha512-DiH1/5e2AFHoHrncl1qLu18ZHPHzRMMPvOLFz8AWvvmc+VCqTdIaE+tdxKr3e8rYylKllibgvDOzrLjfTNjF+Q==
   dependencies:
-    "@storybook/addons" "5.3.21"
-    "@storybook/api" "5.3.21"
-    "@storybook/client-api" "5.3.21"
-    "@storybook/components" "5.3.21"
-    "@storybook/core-events" "5.3.21"
-    "@storybook/theming" "5.3.21"
-    "@types/react-color" "^3.0.1"
-    copy-to-clipboard "^3.0.8"
-    core-js "^3.0.1"
+    copy-to-clipboard "^3.3.1"
+    core-js "^3.8.2"
     escape-html "^1.0.3"
-    fast-deep-equal "^2.0.1"
-    global "^4.3.2"
-    lodash "^4.17.15"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.20"
     prop-types "^15.7.2"
-    qs "^6.6.0"
-    react-color "^2.17.0"
+    qs "^6.10.0"
+    react-colorful "^5.1.2"
     react-lifecycles-compat "^3.0.4"
-    react-select "^3.0.8"
+    react-select "^3.2.0"
 
 "@storybook/addon-links@5.3.21":
   version "5.3.21"
@@ -2259,14 +2247,6 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-color@^3.0.1":
-  version "3.0.4"
-  resolved "https://registry.npmjs.org/@types/react-color/-/react-color-3.0.4.tgz"
-  integrity sha512-EswbYJDF1kkrx93/YU+BbBtb46CCtDMvTiGmcOa/c5PETnwTiSWoseJ1oSWeRl/4rUXkhME9bVURvvPg0W5YQw==
-  dependencies:
-    "@types/react" "*"
-    "@types/reactcss" "*"
-
 "@types/react-syntax-highlighter@11.0.4":
   version "11.0.4"
   resolved "https://registry.npmjs.org/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.4.tgz"
@@ -2295,13 +2275,6 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
-
-"@types/reactcss@*":
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/@types/reactcss/-/reactcss-1.2.3.tgz"
-  integrity sha512-d2gQQ0IL6hXLnoRfVYZukQNWHuVsE75DzFTLPUuyyEhJS8G2VvlE+qfQQ91SJjaMqlURRCNIsX7Jcsw6cEuJlA==
-  dependencies:
-    "@types/react" "*"
 
 "@types/source-list-map@*":
   version "0.1.2"
@@ -4298,9 +4271,9 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.npmjs.org/copy-descriptor/-/copy-descriptor-0.1.1.tgz"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-copy-to-clipboard@^3.0.8:
+copy-to-clipboard@^3.0.8, copy-to-clipboard@^3.3.1:
   version "3.3.1"
-  resolved "https://registry.npmjs.org/copy-to-clipboard/-/copy-to-clipboard-3.3.1.tgz"
+  resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.3.1.tgz#115aa1a9998ffab6196f93076ad6da3b913662ae"
   integrity sha512-i13qo6kIHTTpCm8/Wup+0b1mVWETvu2kIMzKoK8FpkLkFxlt0znUAHcMzox+T8sPlqtZXq3CulEjQHsYiGFJUw==
   dependencies:
     toggle-selection "^1.0.6"
@@ -4332,6 +4305,11 @@ core-js@^3.0.1, core-js@^3.0.4:
   version "3.6.5"
   resolved "https://registry.npmjs.org/core-js/-/core-js-3.6.5.tgz"
   integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
+
+core-js@^3.8.2:
+  version "3.19.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.19.1.tgz#f6f173cae23e73a7d88fa23b6e9da329276c6641"
+  integrity sha512-Tnc7E9iKd/b/ff7GFbhwPVzJzPztGrChB8X8GLqoYGdEOG8IpLnK1xPyo3ZoO3HsK6TodJS58VGPOxA+hLHQMg==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -6023,9 +6001,9 @@ fast-deep-equal@^2.0.1:
   resolved "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
 
-fast-deep-equal@^3.1.1:
+fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
-  resolved "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
+  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
 fast-diff@^1.1.1:
@@ -8606,10 +8584,15 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.0.1, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4:
+lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4:
   version "4.17.20"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+
+lodash@^4.17.20:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
@@ -8727,11 +8710,6 @@ marksy@^8.0.0:
     "@babel/standalone" "^7.4.5"
     he "^1.2.0"
     marked "^0.3.12"
-
-material-colors@^1.2.1:
-  version "1.2.6"
-  resolved "https://registry.npmjs.org/material-colors/-/material-colors-1.2.6.tgz"
-  integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -10681,7 +10659,7 @@ prop-types-exact@^1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -10781,6 +10759,13 @@ qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.npmjs.org/qs/-/qs-6.7.0.tgz"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+
+qs@^6.10.0:
+  version "6.10.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
+  integrity sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==
+  dependencies:
+    side-channel "^1.0.4"
 
 qs@^6.6.0:
   version "6.9.4"
@@ -10935,17 +10920,10 @@ react-clientside-effect@^1.2.2:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-react-color@^2.17.0:
-  version "2.18.1"
-  resolved "https://registry.npmjs.org/react-color/-/react-color-2.18.1.tgz"
-  integrity sha512-X5XpyJS6ncplZs74ak0JJoqPi+33Nzpv5RYWWxn17bslih+X7OlgmfpmGC1fNvdkK7/SGWYf1JJdn7D2n5gSuQ==
-  dependencies:
-    "@icons/material" "^0.2.4"
-    lodash "^4.17.11"
-    material-colors "^1.2.1"
-    prop-types "^15.5.10"
-    reactcss "^1.2.0"
-    tinycolor2 "^1.4.1"
+react-colorful@^5.1.2:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.5.1.tgz#29d9c4e496f2ca784dd2bb5053a3a4340cfaf784"
+  integrity sha512-M1TJH2X3RXEt12sWkpa6hLc/bbYS0H6F4rIqjQZ+RxNBstpY67d9TrFXtqdZwhpmBXcCwEi7stKqFue3ZRkiOg==
 
 react-dev-utils@^9.0.0:
   version "9.1.0"
@@ -11077,10 +11055,10 @@ react-hotkeys@2.0.0:
   dependencies:
     prop-types "^15.6.1"
 
-react-input-autosize@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-2.2.2.tgz"
-  integrity sha512-jQJgYCA3S0j+cuOwzuCd1OjmBmnZLdqQdiLKRYrsMMzbjUrVDS5RvJUDwJqA7sKuksDuzFtm6hZGKFu7Mjk5aw==
+react-input-autosize@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-3.0.0.tgz#6b5898c790d4478d69420b55441fcc31d5c50a85"
+  integrity sha512-nL9uS7jEs/zu8sqwFE5MAPx6pPkNAriACQ2rGLlqmKr2sPGtN7TXTyDdQt4lbNXVx7Uzadb40x8qotIuru6Rhg==
   dependencies:
     prop-types "^15.5.8"
 
@@ -11148,10 +11126,10 @@ react-popper@^1.3.7:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-select@^3.0.8:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/react-select/-/react-select-3.1.0.tgz"
-  integrity sha512-wBFVblBH1iuCBprtpyGtd1dGMadsG36W5/t2Aj8OE6WbByDg5jIFyT7X5gT+l0qmT5TqWhxX+VsKJvCEl2uL9g==
+react-select@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-3.2.0.tgz#de9284700196f5f9b5277c5d850a9ce85f5c72fe"
+  integrity sha512-B/q3TnCZXEKItO0fFN/I0tWOX3WJvi/X2wtdffmwSQVRwg5BpValScTO1vdic9AxlUgmeSzib2hAZAwIUQUZGQ==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@emotion/cache" "^10.0.9"
@@ -11159,7 +11137,7 @@ react-select@^3.0.8:
     "@emotion/css" "^10.0.9"
     memoize-one "^5.0.0"
     prop-types "^15.6.0"
-    react-input-autosize "^2.2.2"
+    react-input-autosize "^3.0.0"
     react-transition-group "^4.3.0"
 
 react-sizeme@^2.6.7:
@@ -11226,13 +11204,6 @@ react@16.14.0, react@^16.8.3:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-
-reactcss@^1.2.0:
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/reactcss/-/reactcss-1.2.3.tgz"
-  integrity sha512-KiwVUcFu1RErkI97ywr8nvx8dNOpT03rbnma0SSalTYjkrPYaEajR4a/MRt6DZ46K6arDRbWMNHF+xH7G7n/8A==
-  dependencies:
-    lodash "^4.0.1"
 
 read-pkg-up@^4.0.0:
   version "4.0.0"
@@ -11943,6 +11914,15 @@ side-channel@^1.0.2:
   dependencies:
     es-abstract "^1.18.0-next.0"
     object-inspect "^1.8.0"
+
+side-channel@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/side-channel/-/side-channel-1.0.4.tgz#efce5c8fdc104ee751b25c58d4290011fa5ea2cf"
+  integrity sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==
+  dependencies:
+    call-bind "^1.0.0"
+    get-intrinsic "^1.0.2"
+    object-inspect "^1.9.0"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
@@ -12699,11 +12679,6 @@ tiny-warning@^1.0.2:
   version "1.0.3"
   resolved "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
-
-tinycolor2@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.npmjs.org/tinycolor2/-/tinycolor2-1.4.1.tgz"
-  integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
 
 tmp@^0.0.33:
   version "0.0.33"
