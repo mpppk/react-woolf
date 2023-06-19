@@ -34,7 +34,7 @@
     "dagre": "0.8.5",
     "dagre-d3": "0.6.4",
     "react": "16.14.0",
-    "react-fast-compare": "2.0.4",
+    "react-fast-compare": "3.2.2",
     "react-json-tree": "0.15.1",
     "react-json-view": "1.20.4",
     "woolf": "0.0.16"
