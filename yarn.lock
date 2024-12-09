@@ -1380,12 +1380,12 @@
     react-inspector "^4.0.0"
     uuid "^3.3.2"
 
-"@storybook/addon-console@1.2.3":
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/@storybook/addon-console/-/addon-console-1.2.3.tgz"
-  integrity sha512-w5uCUwECA28fdZWoa+A4e/RS9XzBStdd3TwwmpSM5m4fjURJI7Qr+uVq30UeRdgZRH1K7CdWzYUE6RxWXMdVyw==
+"@storybook/addon-console@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/@storybook/addon-console/-/addon-console-3.0.0.tgz"
+  integrity sha512-2pD2c9KNWuPIWlprqmWoZYrNQnG2qoDg7fAAXXNK6YDc5x/ZpK0cfOyfz/Gpdeje4QUmttZKAVjH0nOZDuxfvw==
   dependencies:
-    global "^4.3.2"
+    "@storybook/global" "^5.0.0"
 
 "@storybook/addon-info@5.3.21":
   version "5.3.21"
@@ -1750,6 +1750,11 @@
   integrity sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==
   dependencies:
     lodash "^4.17.15"
+
+"@storybook/global@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@storybook/global/-/global-5.0.0.tgz"
+  integrity sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==
 
 "@storybook/node-logger@5.3.21":
   version "5.3.21"
