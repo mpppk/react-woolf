@@ -48,7 +48,7 @@
     "@storybook/addon-links": "5.3.21",
     "@storybook/addon-storysource": "5.3.21",
     "@storybook/addon-viewport": "5.3.21",
-    "@storybook/addons": "5.3.21",
+    "@storybook/addons": "5.3.22",
     "@storybook/react": "5.3.21",
     "@types/d3": "5.16.4",
     "@types/dagre-d3": "0.4.39",
