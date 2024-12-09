@@ -1408,7 +1408,7 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@5.3.21":
+"@storybook/addon-knobs@*", "@storybook/addon-knobs@5.3.21":
   version "5.3.21"
   resolved "https://registry.npmjs.org/@storybook/addon-knobs/-/addon-knobs-5.3.21.tgz"
   integrity sha512-w1g61n2j87i3bzBltNl64u2hH06xQHKitfWWKBfRCiy1plC1hjZQ31GiUrA7uLUrD4NUx3GNO9dw0cDTnIIHRw==
@@ -2464,13 +2464,12 @@
     "@types/react" "*"
     "@types/storybook__react" "*"
 
-"@types/storybook__addon-knobs@5.0.4":
-  version "5.0.4"
-  resolved "https://registry.npmjs.org/@types/storybook__addon-knobs/-/storybook__addon-knobs-5.0.4.tgz"
-  integrity sha512-B43R3SWGjQe/dyGpzjjCLloMBcxhHUtLOYv1EwIEiCBaZrz8h4ItdHA3yMX3GO6L6MyH9BVhNUUc9QzdfnyyjQ==
+"@types/storybook__addon-knobs@5.2.1":
+  version "5.2.1"
+  resolved "https://registry.npmjs.org/@types/storybook__addon-knobs/-/storybook__addon-knobs-5.2.1.tgz"
+  integrity sha512-fKK8cRxrfZ59wjso4NHpDd+BpG66HClpMEyjXeMz2XCtxRJhSZmvs/g/tBYYj4TZ+EhpATOnPnxwKn7aXMVsQg==
   dependencies:
-    "@types/react" "*"
-    "@types/storybook__react" "*"
+    "@storybook/addon-knobs" "*"
 
 "@types/storybook__react@*", "@types/storybook__react@4.0.2":
   version "4.0.2"
