@@ -6,7 +6,7 @@ restore_cache: &restore_cache
 jobs:
   build: &build
     docker:
-      - image: circleci/node:10-stretch
+      - image: circleci/node:10.24.1-stretch
 
     working_directory: ~/repo
     steps:
