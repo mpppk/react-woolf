@@ -1360,7 +1360,7 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
-"@storybook/addon-actions@5.3.21":
+"@storybook/addon-actions@*", "@storybook/addon-actions@5.3.21":
   version "5.3.21"
   resolved "https://registry.npmjs.org/@storybook/addon-actions/-/addon-actions-5.3.21.tgz"
   integrity sha512-6SAF/j8UBZaAbRz/rYUlcCXda+c4LQvvNlbVJc9GHjNNNMJQQVc3/EU+M7PyFz6uDUxudAW1+AFchGk04ACJ2g==
@@ -2451,10 +2451,12 @@
   resolved "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-1.0.1.tgz"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/storybook__addon-actions@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.npmjs.org/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.3.tgz"
-  integrity sha512-RSFFfruUHL7La4CZpuiKZ0mZvr5orjenFA2jc31tfPwvA3fYNH4/9XSfA2MB08IpJbF3aErtYWT5Dtigkxnltg==
+"@types/storybook__addon-actions@5.2.1":
+  version "5.2.1"
+  resolved "https://registry.npmjs.org/@types/storybook__addon-actions/-/storybook__addon-actions-5.2.1.tgz"
+  integrity sha512-FyxvLsL23H55GD1EEQnRd6TcYU+dbbxtRdreMtaRRgpmTVJ3N7BGyWZIYjou4ja1/pD8xwwvIaqZo3Ew7HEw2w==
+  dependencies:
+    "@storybook/addon-actions" "*"
 
 "@types/storybook__addon-info@4.1.2":
   version "4.1.2"
