@@ -42,7 +42,7 @@
   "devDependencies": {
     "@babel/core": "7.26.0",
     "@storybook/addon-actions": "5.3.21",
-    "@storybook/addon-console": "1.2.3",
+    "@storybook/addon-console": "3.0.0",
     "@storybook/addon-info": "5.3.21",
     "@storybook/addon-knobs": "5.3.21",
     "@storybook/addon-links": "5.3.21",
