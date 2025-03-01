@@ -2053,11 +2053,6 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/base16@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@types/base16/-/base16-1.0.2.tgz"
-  integrity sha512-oYO/U4VD1DavwrKuCSQWdLG+5K22SLPem2OQaHmFcQuwHoVeGC+JGVRji2MUqZUAIQZHEonOeVfAX09hYiLsdg==
-
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.npmjs.org/@types/color-name/-/color-name-1.1.1.tgz"
@@ -2349,10 +2344,10 @@
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.5.tgz"
   integrity sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
 
-"@types/lodash@^4.14.176":
-  version "4.14.176"
-  resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.176.tgz"
-  integrity sha512-xZmuPTa3rlZoIbtDUyJKZQimJV3bxCmzMIO2c9Pz9afyDro6kr7R79GwcB6mRhuoPmV2p1Vb66WOJH7F886WKQ==
+"@types/lodash@^4.17.0", "@types/lodash@^4.17.15":
+  version "4.17.16"
+  resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.17.16.tgz"
+  integrity sha512-HX7Em5NYQAXKW+1T+FiuG27NGwzJfCX3s1GjOa7ujxZa52kjJLOr4FUxT+giF6Tgxv1e+/czV/iTtBw27WTU9g==
 
 "@types/minimatch@^3.0.3":
   version "3.0.3"
@@ -2379,7 +2374,7 @@
   resolved "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.0.tgz"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/prop-types@*", "@types/prop-types@^15.7.4":
+"@types/prop-types@*":
   version "15.7.4"
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.4.tgz"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
@@ -4328,21 +4323,29 @@ color-name@~1.1.4:
   resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-color-string@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/color-string/-/color-string-1.6.0.tgz"
-  integrity sha512-c/hGS+kRWJutUBEngKKmk4iH3sD59MBkoxVapS/0wgpCz2u7XsNloxknyvBhzwEs1IbV36D9PwqLPJ2DTu3vMA==
+color-string@^1.6.0, color-string@^1.9.0:
+  version "1.9.1"
+  resolved "https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz"
+  integrity sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==
   dependencies:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color@^3.0.0, color@^3.2.1:
+color@^3.0.0:
   version "3.2.1"
   resolved "https://registry.npmjs.org/color/-/color-3.2.1.tgz"
   integrity sha512-aBl7dZI9ENN6fUGC7mWpMTPNHmWUSNan9tuWN6ahh5ZLNk9baLJOnSMlrQkHcrfFgz2/RigjUVAjdx36VcemKA==
   dependencies:
     color-convert "^1.9.3"
     color-string "^1.6.0"
+
+color@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.npmjs.org/color/-/color-4.2.3.tgz"
+  integrity sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==
+  dependencies:
+    color-convert "^2.0.1"
+    color-string "^1.9.0"
 
 colorette@^1.2.1:
   version "1.3.0"
@@ -4855,10 +4858,10 @@ csstype@^3.0.2:
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.0.6.tgz"
   integrity sha512-+ZAmfyWMT7TiIlzdqJgjMb7S4f1beorDbWbsocyK4RaiqA5RTX3K14bnBWmmA9QEM0gRdsjyyrEmcyga8Zsxmw==
 
-csstype@^3.0.9:
-  version "3.0.9"
-  resolved "https://registry.npmjs.org/csstype/-/csstype-3.0.9.tgz"
-  integrity sha512-rpw6JPxK6Rfg1zLOYCSwle2GFOOsnjmDYDaBwEcwoOg4qlsIVCN789VkBZDJAGi4T07gI4YSutR43t9Zz4Lzuw==
+csstype@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz"
+  integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -8850,12 +8853,17 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash.clone@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.clone/-/lodash.clone-4.5.0.tgz"
   integrity sha1-GVhwRQ9aExkkeN9Lw9I9LeoZB7Y=
 
-lodash.curry@^4.0.1, lodash.curry@^4.1.1:
+lodash.curry@^4.0.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/lodash.curry/-/lodash.curry-4.1.1.tgz"
   integrity sha1-JI42By7ekGUB11lmIAqG2riyMXA=
@@ -11174,6 +11182,16 @@ react-addons-create-fragment@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.0"
 
+react-base16-styling@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.npmjs.org/react-base16-styling/-/react-base16-styling-0.10.0.tgz"
+  integrity sha512-H1k2eFB6M45OaiRru3PBXkuCcn2qNmx+gzLb4a9IPMR7tMH8oBRXU5jGbPDYG1Hz+82d88ED0vjR8BmqU3pQdg==
+  dependencies:
+    "@types/lodash" "^4.17.0"
+    color "^4.2.3"
+    csstype "^3.1.3"
+    lodash-es "^4.17.21"
+
 react-base16-styling@^0.6.0:
   version "0.6.0"
   resolved "https://registry.npmjs.org/react-base16-styling/-/react-base16-styling-0.6.0.tgz"
@@ -11183,18 +11201,6 @@ react-base16-styling@^0.6.0:
     lodash.curry "^4.0.1"
     lodash.flow "^3.3.0"
     pure-color "^1.2.0"
-
-react-base16-styling@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.npmjs.org/react-base16-styling/-/react-base16-styling-0.8.1.tgz"
-  integrity sha512-Qf8MiaeZRa6EiooXEtQWGvPuJDp1CuN2EjS9QUiBTBY5lmpFLvL58lCfRNkkAs8fBVsXOmkiKTcFQuEl4vYTgw==
-  dependencies:
-    "@types/base16" "^1.0.2"
-    "@types/lodash" "^4.14.176"
-    base16 "^1.0.0"
-    color "^3.2.1"
-    csstype "^3.0.9"
-    lodash.curry "^4.1.1"
 
 react-clientside-effect@^1.2.2:
   version "1.2.2"
@@ -11366,14 +11372,13 @@ react-is@^16.13.1, react-is@^16.7.0, "react-is@^16.8.0 || ^17.0.0", react-is@^16
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-json-tree@0.15.1:
-  version "0.15.1"
-  resolved "https://registry.npmjs.org/react-json-tree/-/react-json-tree-0.15.1.tgz"
-  integrity sha512-9HTejgI4yuR1RBSQ8HOp4AOZ513MZru/PC7abzo0EG+++IoMHqnCKw43hIySUyBNGz81un/0M575Hvwnp4oQiA==
+react-json-tree@0.20.0:
+  version "0.20.0"
+  resolved "https://registry.npmjs.org/react-json-tree/-/react-json-tree-0.20.0.tgz"
+  integrity sha512-h+f9fUNAxzBx1rbrgUF7+zSWKGHDtt2VPYLErIuB0JyKGnWgFMM21ksqQyb3EXwXNnoMW2rdE5kuAaubgGOx2Q==
   dependencies:
-    "@types/prop-types" "^15.7.4"
-    prop-types "^15.7.2"
-    react-base16-styling "^0.8.1"
+    "@types/lodash" "^4.17.15"
+    react-base16-styling "^0.10.0"
 
 react-json-view@1.20.4:
   version "1.20.4"
